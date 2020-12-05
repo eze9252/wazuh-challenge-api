@@ -7,8 +7,9 @@ router.get('/alerts', function(req, res, next) {
 
   let offset = req.query.offset;
   let limit = req.query.limit;
+  let id = req.query.id;
 
-  const dataAlerts = AlertService.getAlerts(offset,limit)
+  const dataAlerts = AlertService.getAlerts(offset,limit,id)
 
   const body = {
     total_items : dataAlerts.length,
